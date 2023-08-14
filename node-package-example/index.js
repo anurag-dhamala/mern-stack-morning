@@ -1,16 +1,20 @@
 import http from "node:http";
 
 
+
+const userList = [
+    { name: "Susish", class: "MERN Stack" },
+    { name: "Prateek", class: "AI" },
+    { name: "Dawa", class: "Linux" }
+]
+
+
+
 const server = http.createServer((req, res)=> {
 
     const route = req.url;
-    console.log("the requested route: ", route);
-
-    if(route === "/api/hello") {
-        const obj = {
-            message: "Hi"
-        }
-        res.end(JSON.stringify(obj));
+    if(route === "/api/users") {
+        res.end(JSON.stringify(userList));
         return;
     }
 
