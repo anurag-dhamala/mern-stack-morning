@@ -17,7 +17,6 @@ const server = http.createServer((req, res)=> {
         res.end(JSON.stringify(userList));
         return;
     }
-
     const obj = {
         messge: "Successful",
         status: 200
